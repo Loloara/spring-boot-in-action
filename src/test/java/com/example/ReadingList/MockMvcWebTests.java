@@ -34,7 +34,7 @@ public class MockMvcWebTests {
     }
 
     @Test
-    @WithUserDetails(value="lucas", userDetailsServiceBeanName = "myUserDetailsService")
+    @WithUserDetails("lucas")
     public void homePage() throws Exception{
         Reader expectedReader = new Reader();
         expectedReader.setUsername("lucas");
@@ -50,7 +50,7 @@ public class MockMvcWebTests {
     }
 
     @Test
-    @WithUserDetails(value="lucas", userDetailsServiceBeanName = "myUserDetailsService")
+    @WithUserDetails("lucas")
     public void postBook() throws Exception{
         mockMvc.perform(post("/")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
