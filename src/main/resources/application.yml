@@ -10,6 +10,7 @@ server:
   key-password: letmein
   key-store-type: PKCS12
   key-alias: bns-ssl
+
 ---
 spring:
  profiles: development
@@ -19,6 +20,7 @@ spring:
 logging:
  level:
   root: DEBUG
+
 ---
 spring:
  profiles: production
@@ -28,3 +30,16 @@ logging:
  file: app.log
  level:
   root: WARN
+
+---
+spring:
+ profiles: test
+
+server:
+ port: 8080
+ ssl:
+  enabled: false
+
+logging:
+ level:
+  root: DEBUG
