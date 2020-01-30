@@ -1,20 +1,5 @@
 amazon:
  associateId: loloara-20
----
-spring:
- profiles: development
- thymeleaf:
-  cache: false
-
-server:
- port: 80
-
-logging:
- level:
-  root: DEBUG
----
-spring:
- profiles: production
 
 server:
  port: 8443
@@ -25,6 +10,18 @@ server:
   key-password: letmein
   key-store-type: PKCS12
   key-alias: bns-ssl
+---
+spring:
+ profiles: development
+ thymeleaf:
+  cache: false
+
+logging:
+ level:
+  root: DEBUG
+---
+spring:
+ profiles: production
 
 logging:
  path: /logs/
