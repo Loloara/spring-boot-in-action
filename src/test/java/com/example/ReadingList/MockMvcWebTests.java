@@ -27,6 +27,13 @@ public class MockMvcWebTests {
     private MockMvc mockMvc;
 
     @Test
+    public void homePage_unauthenticatedUser() throws Exception {
+        mockMvc.perform(get("/"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(header().string("Location", "http://localhost/login"));
+    }
+
+    @Test
     @WithUserDetails(value="lucas", userDetailsServiceBeanName = "myUserDetailsService")
     public void homePage() throws Exception{
         Reader expectedReader = new Reader();
