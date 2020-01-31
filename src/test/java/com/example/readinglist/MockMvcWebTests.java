@@ -1,7 +1,7 @@
-package com.example.ReadingList;
+package com.example.readinglist;
 
-import com.example.ReadingList.model.Book;
-import com.example.ReadingList.model.Reader;
+import com.example.readinglist.model.Book;
+import com.example.readinglist.model.Reader;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.ReadingList.model;
+package com.example.readinglist.model;
 
 import lombok.Data;
 

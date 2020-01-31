@@ -1,4 +1,4 @@
-package com.example.ReadingList;
+package com.example.readinglist;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

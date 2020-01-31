@@ -1,4 +1,4 @@
-package com.example.ReadingList.config;
+package com.example.readinglist.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

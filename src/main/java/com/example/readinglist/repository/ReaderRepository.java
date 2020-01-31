@@ -1,6 +1,6 @@
-package com.example.ReadingList.repository;
+package com.example.readinglist.repository;
 
-import com.example.ReadingList.model.Reader;
+import com.example.readinglist.model.Reader;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

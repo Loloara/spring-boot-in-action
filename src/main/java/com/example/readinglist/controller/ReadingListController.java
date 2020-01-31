@@ -1,18 +1,16 @@
-package com.example.ReadingList.controller;
+package com.example.readinglist.controller;
 
 import java.util.List;
 
-import com.example.ReadingList.config.AmazonProperties;
-import com.example.ReadingList.model.Book;
-import com.example.ReadingList.model.Reader;
-import com.example.ReadingList.repository.ReadingListRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.readinglist.config.AmazonProperties;
+import com.example.readinglist.model.Book;
+import com.example.readinglist.model.Reader;
+import com.example.readinglist.repository.ReadingListRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/")

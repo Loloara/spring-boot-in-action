@@ -1,6 +1,6 @@
-package com.example.ReadingList.resolver;
+package com.example.readinglist.resolver;
 
-import com.example.ReadingList.model.Reader;
+import com.example.readinglist.model.Reader;
 import org.springframework.core.MethodParameter;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.support.WebDataBinderFactory;

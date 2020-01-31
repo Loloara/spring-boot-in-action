@@ -1,6 +1,6 @@
-package com.example.ReadingList;
+package com.example.readinglist;
 
-import com.example.ReadingList.resolver.ReaderHandlerMethodArgumentResolver;
+import com.example.readinglist.resolver.ReaderHandlerMethodArgumentResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
