@@ -43,7 +43,6 @@ dependencies {
 	}
 	implementation 'junit:junit:4.12'
 	testImplementation 'org.springframework.security:spring-security-test'
-	testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
 }
 
 test {
