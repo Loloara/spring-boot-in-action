@@ -23,8 +23,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class MockMvcWebTests {
 
-    @Autowired
-    private MockMvc mockMvc;
+    private final MockMvc mockMvc;
+
+    public MockMvcWebTests(MockMvc mockMvc) { this.mockMvc = mockMvc; }
 
     @Test
     public void homePage_unauthenticatedUser() throws Exception {
@@ -35,7 +36,7 @@ public class MockMvcWebTests {
 
     @Test
     @WithUserDetails("lucas")
-    public void homePage() throws Exception{
+    public void homePage() throws Exception {
         Reader expectedReader = new Reader();
         expectedReader.setUsername("lucas");
         expectedReader.setPassword("{noop}password");
@@ -51,7 +52,7 @@ public class MockMvcWebTests {
 
     @Test
     @WithUserDetails("lucas")
-    public void postBook() throws Exception{
+    public void postBook() throws Exception {
         mockMvc.perform(post("/")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("title", "BOOK TITLE")
