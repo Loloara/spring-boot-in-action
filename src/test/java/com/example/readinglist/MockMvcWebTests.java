@@ -23,9 +23,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class MockMvcWebTests {
 
-    private final MockMvc mockMvc;
-
-    public MockMvcWebTests(MockMvc mockMvc) { this.mockMvc = mockMvc; }
+    @Autowired
+    private MockMvc mockMvc;
 
     @Test
     public void homePage_unauthenticatedUser() throws Exception {
