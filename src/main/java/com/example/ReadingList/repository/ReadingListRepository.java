@@ -7,5 +7,5 @@ import com.example.ReadingList.model.Reader;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ReadingListRepository extends JpaRepository<Book, Long> {
-    List<Book> findByReader(Reader reader);
+    List<Book> findAllByReader(Reader reader);
 }
