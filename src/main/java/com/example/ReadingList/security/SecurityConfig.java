@@ -16,35 +16,34 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private ReaderRepository readerRepository;
+    private final ReaderRepository readerRepository;
+
+    public SecurityConfig(ReaderRepository readerRepository) {
+        this.readerRepository = readerRepository;
+    }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/").hasRole("READER")
-                    .antMatchers("/**").permitAll()
+                .antMatchers("/").hasRole("READER")
+                .antMatchers("/**").permitAll()
 
                 .and()
 
                 .formLogin()
-                    .loginPage("/login")
-                    .failureUrl("/login?error=true");
+                .loginPage("/login")
+                .failureUrl("/login?error=true");
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(myUserDetailsService());
     }
 
     @Bean
     public UserDetailsService myUserDetailsService() {
-        return new UserDetailsService(){
-            @Override
-            public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-                return readerRepository.findByUsername(username);
-            }
-        };
+        return username -> readerRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("username :" + username));
     }
 }
